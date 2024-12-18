@@ -1541,14 +1541,6 @@ export const Rulesets: import('../sim/dex-formats').FormatDataTable = {
 		onBegin() {
 			this.add('rule', 'Twisted Mod: The offensive and defensive effectiveness swap.');
 		},
-		onEffectivenessPriority: 1,
-		onEffectiveness(typeMod, target, type, move) {
-			// The effectiveness of Freeze Dry on Water isn't reverted
-			if (move && move.id === 'freezedry' && type === 'Water') return;
-			//if (move && !this.dex.getImmunity(move, type)) return 1;
-			// Ignore normal effectiveness, prevents bug with Tera Shell
-			if (typeMod) return -typeMod;
-		},
 	},
 
 	minsourcegen: {
